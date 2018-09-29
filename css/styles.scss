@@ -82,3 +82,17 @@ body{
     margin-top: 30px;
     margin-bottom: 30px; 
 }
+.modal-content {
+    .modal-body{
+        background-color: $background-pale;     
+    }
+
+    .modal-header{
+        background-color: $background-dark;
+        .close {
+            color:#FFFAF0;
+        }
+    }
+    
+    
+}
