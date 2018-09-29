@@ -31,9 +31,9 @@
                         <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                     </ul>
                     <span class="navbar-text">
-                        <a data-toggle="modal" data-target="#loginModal">
-                        <span class="fa fa-sign-in"></span> Login</a>
+                        <a class="button" id="modalLogin"><span class="fa fa-sign-in"></span> Login</a>
                     </span>
+                
                 </div>
         </div>
     </nav>
@@ -44,7 +44,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Login </h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" id="xClose">&times;</button>
             </div>
             <div class="modal-body">
                 <form>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <button type="button" class="btn btn-secondary btn-sm ml-auto" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-secondary btn-sm ml-auto" id="modalCancel">Cancel</button>
                         <button type="submit" class="btn btn-primary btn-sm ml-1">Sign in</button>        
                     </div>
                 </form>
@@ -86,8 +86,7 @@
                     <img src="img/img/logo.png" class="img-fluid">
                 </div>
                 <div class="col-md-4 col-sm-4 align-self-center">
-                        <button type="button" class="btn btn-block btn-warning btn-lg ml-auto" data-dismiss="modal"
-                        data-placement="bottom" data-toggle="modal" data-target="#ReserveTable">Reserve Table</button>
+                        <button type="button" class="btn btn-block btn-warning btn-lg ml-auto" id="ReserveTableBtn">Reserve Table</button>
                 </div>
             </div>            
         </div>
@@ -156,7 +155,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="ReserveXclose">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -218,7 +217,7 @@
                         <div class="offset-md-4">
                         <div class="form-row spacer1">
                             <div class="col-md-6">
-                                <button type="button" class="btn btn-secondary btn-lg ml-auto" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-secondary btn-lg ml-auto" id="ReserveCancel">Cancel</button>
                                 <button type="submit" class="btn btn-primary btn-lg ml-auto">Reserve</button>        
                             </div>    
                         </div>
@@ -279,22 +278,43 @@
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>  
   <script>
-      $(document).ready(function() {
-          $('#mycarousel').carousel({ interval:1000 });
-          $('#carouselButton').click(function() {
-              if ($('#carouselButton').children('span').hasClass('fa fa-pause')) {
+    $(document).ready(function() {
+        $('#mycarousel').carousel({ interval:1000 });
+        $('#carouselButton').click(function() {
+            if ($('#carouselButton').children('span').hasClass('fa fa-pause')) {
                 $('#mycarousel').carousel('pause');
                 $('#carouselButton').children('span').removeClass('fa-pause');
                 $('#carouselButton').children('span').addClass('fa-play');
-              }
-              else if($('#carouselButton').children('span').hasClass('fa fa-play')) {
+            }
+            else if($('#carouselButton').children('span').hasClass('fa fa-play')) {
                   $('#mycarousel').carousel('cycle');
                   $('#carouselButton').children('span').removeClass('fa-play');
                   $('#carouselButton').children('span').addClass('fa-pause');
-              }
-              
-          });
-      });
+            }
+        });
+        $("#modalLogin").click(function(){
+             $('#loginModal').modal('show'); 
+        });
+        $("#modalCancel").click(function(){
+             $('#loginModal').modal('hide');
+        });
+        $("#xClose").click(function(){
+             $('#loginModal').modal('hide');
+        });
+   
+        $("#ReserveTableBtn").click(function(){
+             $('#ReserveTable').modal('show'); 
+        });
+
+        $("#ReserveXclose").click(function(){
+             $('#ReserveTable').modal('hide');
+        });
+        $("#ReserveCancel").click(function(){
+             $('#ReserveTable').modal('hide');
+        });
+                
+    });
+
   </script>
  
 </body>
