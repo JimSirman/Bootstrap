@@ -17,7 +17,10 @@
     "bootstrap": "^4.0.0",
     "bootstrap-social": "^5.1.1",
     "font-awesome": "^4.7.0",
+    "hoek": "^5.0.4",
     "jquery": "^3.1.1",
-    "popper.js": "^1.12.9"
+    "popper.js": "^1.12.9",
+    "request-promise": "^4.2.2",
+    "uncss": "^0.16.2"
   }
 }
